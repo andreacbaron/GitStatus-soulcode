@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@500&display=swap');
+
+h1{
+  font-family: 'Chivo Mono', monospace;
+}
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  
+  .search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 45px;
+  }
+  
+  .search img {
+    margin-bottom: 8px;
+  }
+  
+  #search-form {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .btn {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  button:hover {
+    background-color: #09115c;
+    border: 1px solid #05073f;
+  }
+  
+  button a:hover {
+    color: rgb(255, 255, 255);
+  }
+  .btn a {
+    color: #b643fe;
+    text-decoration: none;
+  }

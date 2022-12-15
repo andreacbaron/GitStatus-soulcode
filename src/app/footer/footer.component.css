@@ -1,0 +1,16 @@
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  footer p {
+    margin: 0;
+    
+  }
+  a{
+    text-decoration: none;
+    color: #98d6fcc6;
+  }
