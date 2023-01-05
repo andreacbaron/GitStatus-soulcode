@@ -1,3 +1,12 @@
+html, body {
+    height: 100%;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: #98d6fc86;
+  }
 
-html, body { height: 100%;}
-body { margin: 0; font-family: Lato, "Quicksand", sans-serif;  }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
