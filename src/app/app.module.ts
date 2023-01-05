@@ -1,30 +1,30 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './material/material.module';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { footer } from './footer/footer.component';
+import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { LoginModule } from './views/login/login.module';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    footer,
-  
-   
-  ],
+
+],
+  bootstrap: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialModule,
+    LoginModule,
+    AppRoutingModule,
+    HttpClientModule,
     ReactiveFormsModule,
-    HttpClientModule // Modulo para fazer requisições HTTP dentro do Angular
   ],
-  providers: [],
-  bootstrap: [AppComponent]
 })
-export class AppModule { }
-
+export class AppModule {}
