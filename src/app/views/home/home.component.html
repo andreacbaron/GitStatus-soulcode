@@ -1,0 +1,44 @@
+<div class="corpo" *ngIf=" gUser != undefined">
+
+    <mat-toolbar class="header">
+      <span>
+        <h1>GitStatus</h1>
+      </span>
+      <p class="separacao">by</p>
+      <img class="foto" src="assets/SoulCode Academy (Blue) Horizontal.png" alt="foto do GitHub">
+      <span class="example-spacer"></span>
+      <a routerLink="/" mat-icon-button class="example-icon favorite-icon"
+        aria-label="Example icon-button with heart icon">
+        <mat-icon>home</mat-icon>
+      </a>
+      <a href="{{gUser.html_url }}" target="_blank" mat-icon-button class="example-icon favorite-icon"
+        aria-label="Example icon-button with heart icon">
+        <mat-icon>code</mat-icon>
+      </a>
+
+    </mat-toolbar>
+
+    <!-- -------------------------------------------------------------------------------------------- -->
+    <main>
+      <section class="foto3">
+        <img class="foto-2" id="foto-2v3" [src]="gUser.avatar_url" alt="">
+        <div class="username">
+          <h1 *ngIf=" gUser != undefined">{{gUser.name }}</h1>
+          <p class="repo" *ngIf=" gUser != undefined">{{gUser.login}}</p>
+        </div>
+      </section>
+
+
+
+      <div routerLink="/pdf" class="pdf2">
+        <h3 class="pdf">PDF</h3>
+      </div>
+    </main>
+
+    <!-- --------------------------------------------------------------------------------------------- -->
+    <footer>
+      <p>©Copyright 2050 by nobody. All rights reversed.</p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ut eius odit, possimus officia aspernatur modi et
+      magnam facilis sed provident? Odio nemo pariatur optio? Sapiente aliquid dolore quos culpa.
+    </footer>
+  </div>
