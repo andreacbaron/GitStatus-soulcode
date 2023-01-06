@@ -7,6 +7,25 @@ import { GithubUser } from 'src/app/interfaces/github-user';
 import { GithubApiService } from 'src/app/service/api.service';
 import { __values } from 'tslib';
 
+export interface PeriodicElement {
+  nome: string;
+  comits: string;
+  branchs: number;
+  detalhes: string;
+}
+
+const ELEMENT_DATA: PeriodicElement[] = [
+  { nome: 'soulcode', comits: '6', branchs: 1, detalhes: '→=' },
+  { nome: 'soulcode', comits: '6', branchs: 1, detalhes: '→=' },
+  { nome: 'soulcode', comits: '6', branchs: 1, detalhes: '→=' },
+  { nome: 'soulcode', comits: '6', branchs: 1, detalhes: '→=' },
+  { nome: 'soulcode', comits: '6', branchs: 1, detalhes: '→=' },
+  { nome: 'soulcode', comits: '6', branchs: 1, detalhes: '→=' },
+  { nome: 'soulcode', comits: '6', branchs: 1, detalhes: '→=' },
+  { nome: 'soulcode', comits: '6', branchs: 1, detalhes: '→=' },
+  { nome: 'soulcode', comits: '6', branchs: 1, detalhes: '→=' },
+];
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -66,9 +85,10 @@ export class HomeComponent implements OnInit {
     // this.gitbubService.countBranch(username, )
   }
 
+  displayedColumns: string[] = ['nome', 'comits', 'branchs', 'detalhes'];
+  dataSource = ELEMENT_DATA;
+
   navigateToPdf(): void {
     this.router.navigate(['pdf']);
   }
-
-  // priavate count()
 }

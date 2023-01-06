@@ -128,3 +128,51 @@
     margin-bottom: 10vh;
 
   }
+
+
+
+
+.tabela {
+  margin: -3% 6%;
+  margin-bottom: 20%;
+}
+
+
+
+
+.repositorio {
+  margin-bottom: 3%;
+
+}
+
+
+
+mat-table {
+  background-color:  #0f637a;
+
+}
+
+
+mat-cell{
+  cursor: pointer;
+  color: aliceblue;
+  text-shadow: 2px 2px 0 rgb(28, 24, 24)
+}
+
+mat-header-cell {
+  color:  #ffd900;
+  text-shadow: 2px 2px 0 rgb(28, 24, 24)
+
+}
+
+.coluna {
+
+color:  #ffd900;
+}
+
+.titulo {
+  margin-bottom: 50vh;
+  background-color: #0f637a;
+}
+
+

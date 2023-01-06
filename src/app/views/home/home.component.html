@@ -35,6 +35,39 @@
       </div>
     </main>
 
+    <div class="tabela">
+      <h1 class="repositorio">Repositórios</h1>
+      <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <!-- Position Column -->
+        <ng-container matColumnDef="nome">
+          <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.nome}} </mat-cell>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="comits">
+          <mat-header-cell *matHeaderCellDef> Commits </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.comits}} </mat-cell>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="branchs">
+          <mat-header-cell *matHeaderCellDef> branchs </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.branchs}} </mat-cell>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="detalhes" >
+          <mat-header-cell *matHeaderCellDef class="coluna"> Detalhes </mat-header-cell>
+          <mat-cell *matCellDef="let element" routerLink="/pdf" > {{element.detalhes}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+
+    </div>
+
     <!-- --------------------------------------------------------------------------------------------- -->
     <footer>
       <p>©Copyright 2050 by nobody. All rights reversed.</p>
