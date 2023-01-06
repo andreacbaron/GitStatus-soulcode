@@ -11,6 +11,11 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('./views/login/conf/login.module').then(m => m.LoginModule),
 
+  },
+  {
+    path: 'pdf',
+    loadChildren: () => import('./views/pdf/config/pdf.module').then(m => m.PdfModule),
+
   }
 ];
 
