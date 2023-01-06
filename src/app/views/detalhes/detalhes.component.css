@@ -1,0 +1,28 @@
+
+* {
+    margin: 0%;
+
+  }
+
+  .pdf {
+    color: aliceblue;
+    background-color: #0f637a;
+  }
+
+
+
+  mat-icon {
+    cursor: pointer;
+    color: aliceblue;
+    padding: 2%;
+    text-shadow: 2px 2px 0 rgb(28, 24, 24)
+
+  }
+
+  .titulo {
+    margin: 2% 10%;
+  }
+
+  mat-cell {
+    color: #ffd900;;
+  }

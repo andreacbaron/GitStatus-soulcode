@@ -59,7 +59,7 @@
         <!-- Symbol Column -->
         <ng-container matColumnDef="detalhes" >
           <mat-header-cell *matHeaderCellDef class="coluna"> Detalhes </mat-header-cell>
-          <mat-cell *matCellDef="let element" routerLink="/pdf" > {{element.detalhes}} </mat-cell>
+          <mat-cell *matCellDef="let element"  class="det" routerLink="/detalhes" > {{element.detalhes}} </mat-cell>
         </ng-container>
 
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

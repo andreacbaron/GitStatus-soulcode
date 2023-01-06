@@ -16,6 +16,11 @@ const routes: Routes = [
     path: 'pdf',
     loadChildren: () => import('./views/pdf/config/pdf.module').then(m => m.PdfModule),
 
+  },
+  {
+    path: 'detalhes',
+    loadChildren: () => import('./views/detalhes/config/detalhes.module').then(m => m.DetalhesModule),
+
   }
 ];
 

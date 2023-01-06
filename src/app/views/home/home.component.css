@@ -47,11 +47,6 @@
   }
 
 
-  .corpo { /*cor da baby todo*/
-    background-color: #0f637a;
-
-  }
-
   main { /*conteudo do boby*/
     margin-bottom: 7%;
   }
@@ -173,6 +168,10 @@ color:  #ffd900;
 .titulo {
   margin-bottom: 50vh;
   background-color: #0f637a;
+}
+.det {
+  color: #ffd900;
+  text-shadow: 3px px 0 rgb(28, 24, 24)
 }
 
 

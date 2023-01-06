@@ -7,8 +7,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginModule } from './views/login/conf/login.module';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeModule } from './views/home/config/home.module';
-import { PdfComponent } from './views/pdf/pdf.component';
 import { PdfModule } from './views/pdf/config/pdf.module';
+import { DetalhesModule } from './views/detalhes/config/detalhes.module';
+
 
 
 
@@ -21,6 +22,7 @@ import { PdfModule } from './views/pdf/config/pdf.module';
     LoginModule,
     HomeModule,
     PdfModule,
+    DetalhesModule,
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule
