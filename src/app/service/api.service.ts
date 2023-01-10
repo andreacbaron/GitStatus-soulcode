@@ -1,6 +1,7 @@
 
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { map, Observable } from 'rxjs';
 import { GithubRepos } from '../interfaces/github-repo';
 import { GithubUser } from '../interfaces/github-user';
 
@@ -27,6 +28,15 @@ export class GithubApiService {
 
   procurarRepo(username: string) {
     return this.http.get<GithubRepos[]>(`${this.baseURL}${username}/repos`);
+  }
+
+  countBranch(username: string, repo: GithubRepos): Observable<GithubRepos> {
+    return this.http.get<any>(`${this.branchUrl}${username}/${repo}/branches`).pipe(
+      map(branch => {
+        console.log(branch,repo, 'ibag branch name');
+        return branch.name;
+      })
+    )
   }
 
   getUSerName(): string {

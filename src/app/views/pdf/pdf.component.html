@@ -1,6 +1,11 @@
 
-<div class="pdf">
-    <mat-icon class="mat-18" [routerLink]="'/home/'+userName">home</mat-icon>
+<div class="pdf" *ngIf="githubUser != undefined">
+    <mat-icon class="mat-18" [routerLink]="'/home/'+userName">reply</mat-icon>
+    <div>
+      <img class="foto-2" id="foto-2v3" [src]="githubUser.avatar_url" alt="">
+      <h1 *ngIf=" githubUser != undefined">{{githubUser.name }}</h1>
+    </div>
+
 
   <h2 class="titulo">Começe aqui a construr o pdf em formato de curriculo </h2>
 </div>

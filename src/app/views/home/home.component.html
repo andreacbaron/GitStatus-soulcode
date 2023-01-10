@@ -1,77 +1,81 @@
 <div class="corpo" *ngIf=" gUser != undefined">
 
-    <mat-toolbar class="header">
-      <span>
-        <h1>GitStatus</h1>
-      </span>
-      <p class="separacao">by</p>
-      <img class="foto" src="assets/SoulCode Academy (Blue) Horizontal.png" alt="foto do GitHub">
-      <span class="example-spacer"></span>
-      <a routerLink="/" mat-icon-button class="example-icon favorite-icon"
-        aria-label="Example icon-button with heart icon">
-        <mat-icon>home</mat-icon>
-      </a>
-      <a href="{{gUser.html_url }}" target="_blank" mat-icon-button class="example-icon favorite-icon"
-        aria-label="Example icon-button with heart icon">
-        <mat-icon>code</mat-icon>
-      </a>
+  <mat-toolbar class="header">
+    <span>
+      <h1>GitStatus</h1>
+    </span>
+    <p class="separacao">by</p>
+    <img class="foto" src="assets/SoulCode Academy (Blue) Horizontal.png" alt="foto do GitHub">
+    <span class="example-spacer"></span>
+    <a routerLink="/" mat-icon-button class="example-icon favorite-icon"
+      aria-label="Example icon-button with heart icon">
+      <mat-icon>home</mat-icon>
+    </a>
+    <a href="{{gUser.html_url }}" target="_blank" mat-icon-button class="example-icon favorite-icon"
+      aria-label="Example icon-button with heart icon">
+      <mat-icon>code</mat-icon>
+    </a>
 
-    </mat-toolbar>
+  </mat-toolbar>
 
-    <!-- -------------------------------------------------------------------------------------------- -->
-    <main>
-      <section class="foto3">
-        <img class="foto-2" id="foto-2v3" [src]="gUser.avatar_url" alt="">
-        <div class="username">
-          <h1 *ngIf=" gUser != undefined">{{gUser.name }}</h1>
-          <p class="repo" *ngIf=" gUser != undefined">{{gUser.login}}</p>
-        </div>
-      </section>
-
-
-
-      <div routerLink="/pdf" class="pdf2">
-        <h3 class="pdf">PDF</h3>
+  <!-- -------------------------------------------------------------------------------------------- -->
+  <main>
+    <section class="foto3">
+      <img class="foto-2" id="foto-2v3" [src]="gUser.avatar_url" alt="">
+      <div class="username">
+        <h1 *ngIf=" gUser != undefined">{{gUser.name }}</h1>
+        <p class="repo" *ngIf=" gUser != undefined">{{gUser.login}}</p>
       </div>
-    </main>
+    </section>
 
-    <div class="tabela">
-      <h1 class="repositorio">Repositórios</h1>
-      <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-        <!-- Position Column -->
-        <ng-container matColumnDef="nome">
-          <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
-          <mat-cell *matCellDef="let element"> {{element.nome}} </mat-cell>
-        </ng-container>
 
-        <!-- Name Column -->
-        <ng-container matColumnDef="comits">
-          <mat-header-cell *matHeaderCellDef> Commits </mat-header-cell>
-          <mat-cell *matCellDef="let element"> {{element.comits}} </mat-cell>
-        </ng-container>
 
-        <!-- Weight Column -->
-        <ng-container matColumnDef="branchs">
-          <mat-header-cell *matHeaderCellDef> branchs </mat-header-cell>
-          <mat-cell *matCellDef="let element"> {{element.branchs}} </mat-cell>
-        </ng-container>
-
-        <!-- Symbol Column -->
-        <ng-container matColumnDef="detalhes" >
-          <mat-header-cell *matHeaderCellDef class="coluna"> Detalhes </mat-header-cell>
-          <mat-cell *matCellDef="let element"  class="det" routerLink="/detalhes" > {{element.detalhes}} </mat-cell>
-        </ng-container>
-
-        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-      </mat-table>
-
+    <div routerLink="/pdf" class="pdf2">
+      <h3 class="pdf">PDF</h3>
     </div>
+  </main>
 
-    <!-- --------------------------------------------------------------------------------------------- -->
-    <footer>
-      <p>©Copyright 2050 by nobody. All rights reversed.</p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ut eius odit, possimus officia aspernatur modi et
-      magnam facilis sed provident? Odio nemo pariatur optio? Sapiente aliquid dolore quos culpa.
-    </footer>
+  <div class="tabela">
+    <h1 class="repositorio">Repositórios</h1>
+    <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!-- Position Column -->
+      <ng-container matColumnDef="nome">
+        <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.nome}} </mat-cell>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="comits">
+        <mat-header-cell *matHeaderCellDef> Commits </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.comits}} </mat-cell>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="branchs">
+        <mat-header-cell *matHeaderCellDef> branchs </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.branchs}} </mat-cell>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="detalhes">
+        <mat-header-cell *matHeaderCellDef class="coluna"> Detalhes </mat-header-cell>
+        <mat-cell *matCellDef="let element" class="det" routerLink="/detalhes">
+          <button class="details material-icons"
+            mat-icon-button >
+            <i class="material-icons">more_horiz</i>
+          </button>{{element.detalhes}} </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+
   </div>
+
+  <!-- --------------------------------------------------------------------------------------------- -->
+  <footer>
+    <p>©Copyright 2050 by nobody. All rights reversed.</p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ut eius odit, possimus officia aspernatur modi et
+    magnam facilis sed provident? Odio nemo pariatur optio? Sapiente aliquid dolore quos culpa.
+  </footer>
+</div>

@@ -1,4 +1,4 @@
-export interface GithubRepos {
+export interface Tabela{
     name: string
     full_name: string
     private: boolean

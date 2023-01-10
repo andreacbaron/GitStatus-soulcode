@@ -11,6 +11,7 @@ import { GithubApiService } from 'src/app/service/api.service';
 export class DetalhesComponent implements OnInit {
   public userName!: string;
 
+
   constructor(private githubApiService: GithubApiService) {}
 
   ngOnInit(): void {

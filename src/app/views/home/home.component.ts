@@ -15,16 +15,11 @@ export interface PeriodicElement {
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  { nome: 'soulcode', comits: '6', branchs: 1, detalhes: '→=' },
-  { nome: 'soulcode', comits: '6', branchs: 1, detalhes: '→=' },
-  { nome: 'soulcode', comits: '6', branchs: 1, detalhes: '→=' },
-  { nome: 'soulcode', comits: '6', branchs: 1, detalhes: '→=' },
-  { nome: 'soulcode', comits: '6', branchs: 1, detalhes: '→=' },
-  { nome: 'soulcode', comits: '6', branchs: 1, detalhes: '→=' },
-  { nome: 'soulcode', comits: '6', branchs: 1, detalhes: '→=' },
-  { nome: 'soulcode', comits: '6', branchs: 1, detalhes: '→=' },
-  { nome: 'soulcode', comits: '6', branchs: 1, detalhes: '→=' },
+   { nome: 'soulcode', comits: '6', branchs: 1, detalhes: '' },
+   { nome: 'soulcode', comits: '6', branchs: 1, detalhes: '' },
+
 ];
+
 
 @Component({
   selector: 'app-home',
@@ -35,6 +30,7 @@ export class HomeComponent implements OnInit {
   githubForm: FormGroup = this.fb.group({
     username: ['', [Validators.required]],
   });
+  public branchs!: any;
 
   gUser!: GithubUser;
   repos:
@@ -51,6 +47,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.procurar();
   }
+
 
   procurar() {
     // const username = this.githubForm.get('username')?.value;
@@ -77,13 +74,23 @@ export class HomeComponent implements OnInit {
     console.log(username, 'ibag username');
     this.gitbubService.procurarRepo(username).subscribe((repos) => {
       this.repos = repos;
+      //his.countBranchs(username);
+      //onsole.log(this.branchs, 'ibag branc')
     });
 
-    this.repos?.forEach((repos) => {
-      // this.gitbubService.countBranch(username, repos.name).subscribe(res => this.countBranches.push(res))
-    });
-    // this.gitbubService.countBranch(username, )
+    //this.countBranchs(username);
   }
+
+
+  private countBranchs(username: string) {
+    if (this.repos != undefined) {
+      this.repos.forEach(repo => {
+
+        this.gitbubService.countBranch(username, repo).subscribe(res => this.branchs = res)
+      })
+    }
+  }
+
 
   displayedColumns: string[] = ['nome', 'comits', 'branchs', 'detalhes'];
   dataSource = ELEMENT_DATA;
@@ -91,4 +98,8 @@ export class HomeComponent implements OnInit {
   navigateToPdf(): void {
     this.router.navigate(['pdf']);
   }
+
+
+
+
 }

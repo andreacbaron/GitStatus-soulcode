@@ -21,3 +21,29 @@
     margin: 2% 10%;
   }
 
+  .foto-2 { /*imagens do perfil avatar*/
+    border-radius: 300px;
+    height: 250px;
+    width: 250px;
+    margin-left: 50px
+
+  }
+
+    h1 {
+      /*GitStatus logo*/
+      font-size: 35px;
+      color: aliceblue;
+      text-shadow: 2px 2px 0 rgb(28, 24, 24)
+    }
+
+    #foto-2v3 {
+      /*sombreamento da foto do perfil*/
+      text-shadow: 2px 2px 0 rgb(28, 24, 24)
+    }
+
+    .trio {
+      flex-direction: row;
+    }
+
+
+
